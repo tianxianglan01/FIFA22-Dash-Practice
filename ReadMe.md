@@ -20,9 +20,9 @@ is given attributes which describe his abilities. I wanted to practice creating 
 - navigate to http://127.0.0.1:8050/
 
 ### Current Step in Project
-![Alt text] (images/fc_barcelona.png?raw = True)
+![] (images/fc_barcelona.png?raw = True)
 
-![Alt text] (images/manchester_city.png?raw = True)
+![] (images/manchester_city.png?raw = True)
 
 ### Additional Information
 - data was intially cleaned using PySpark for PySpark Practice. The data for the app was wrangled using Pandas.
