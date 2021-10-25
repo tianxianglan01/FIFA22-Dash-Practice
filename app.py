@@ -4,6 +4,7 @@ from dash.exceptions import PreventUpdate
 import plotly.express as px
 import pandas as pd
 from dash.dependencies import Input, Output
+import dash_bootstrap_components as dbc
 from helper_functions import t20_club_players_iso, t20_clubs
 
 
@@ -46,7 +47,7 @@ def update_options(search_value):
         locationmode = 'ISO-3',
         scope = 'world',
         hover_name = 'Club',
-        #hover_data= 'FullName'
+        hover_data= ['FullName']
         
         )
 
