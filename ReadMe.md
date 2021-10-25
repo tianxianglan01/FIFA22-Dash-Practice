@@ -16,8 +16,15 @@ is given attributes which describe his abilities. I wanted to practice creating 
 
 
 ### Steps to Open App
+- load up Virtual Environment and load imports
+
+type '.\env1\scripts\activate' into console
+
+pip install -r requirements.txt
+
 - in command prompt or the console, type python3 app.py
 - navigate to http://127.0.0.1:8050/
+
 
 ### Current Step in Project
 ![BARCA] (images/fc_barcelona.png?raw = True)
