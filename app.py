@@ -6,16 +6,18 @@ import pandas as pd
 from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
 from helper_functions import t20_club_players_iso, t20_clubs
+from data_cleaning import t20_paid_clubs
 
 
 app = dash.Dash(__name__)
 
 
 app.layout = html.Div([
-    html.H1('App to Display Player\'s Nationality by Selected Club', style = {'text-align': 'center'}),
-    html.Div(['Please enter a team you\'re interested in from the Top 20',
+    html.H1('App to Display Player\'s Nationality by Selected Club from FIFA22', style = {'text-align': 'center'}),
+    html.Div(['Please enter a team you\'re interested in from the Top 20 Soccer Clubs',
             dcc.Dropdown(id = 'select_team',
-           options = t20_clubs)
+           options = t20_clubs,
+           value = t20_paid_clubs()[0])
      ]),
 
     html.Div(id ='output_container', children = []),
@@ -34,7 +36,7 @@ app.layout = html.Div([
 def update_options(search_value):
     
     #the container used here is just to print the below statement
-    container = 'The team chosen by user was: {}'.format(search_value)
+    container = 'Hover over countries to see players!'
 
     dff = t20_club_players_iso.copy()
     dff = dff[dff['Club'] == search_value]
@@ -47,9 +49,21 @@ def update_options(search_value):
         locationmode = 'ISO-3',
         scope = 'world',
         hover_name = 'Club',
-        hover_data= ['FullName']
+        hover_data= ['FullName'],
+        title = 'Where are {}\'s Players From?'.format(search_value))
+        #projection = 'mercator')
+    
+    # shows country borders
+    fig.update_geos(showcountries = True,
+                    resolution = 50,
+                    visible = False
+
+
+    )
+    # modifies layout of the country     
+    fig.update_layout(title = dict(x = 0.5, xanchor = 'center'),
+                        margin = dict(l=30, r=30, t=30, b=10))
         
-        )
 
 
 
