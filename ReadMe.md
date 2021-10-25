@@ -20,9 +20,9 @@ is given attributes which describe his abilities. I wanted to practice creating 
 - navigate to http://127.0.0.1:8050/
 
 ### Current Step in Project
-![Alt text] (Dash Plotly Practice\FIFA\FIFA App\FC Barcelona.png?raw = True)
+![Alt text] (/FC Barcelona.png?raw = True)
 
-![Alt text] (Dash Plotly Practice\FIFA\FIFA App\Manchester City.png?raw = True)
+![Alt text] (/Manchester City.png?raw = True)
 
 ### Additional Information
 - data was intially cleaned using PySpark for PySpark Practice. The data for the app was wrangled using Pandas.
