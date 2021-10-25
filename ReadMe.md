@@ -20,9 +20,10 @@ is given attributes which describe his abilities. I wanted to practice creating 
 - navigate to http://127.0.0.1:8050/
 
 ### Current Step in Project
-![BARCA] (images\fc_barcelona.png?raw = True)
+![BARCA] (images/fc_barcelona.png?raw = True)
+Dash Plotly Practice\FIFA\FIFA App\images\fc_barcelona.png
 
-![MANCITY] (images\manchester_city.png?raw = True)
+![MANCITY] (images/manchester_city.png?raw = True)
 
 
 
