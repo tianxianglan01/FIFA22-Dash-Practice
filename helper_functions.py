@@ -69,7 +69,7 @@ t20_clubs = fill_club_options(t20_paid_clubs())
 # create column grouped by club and nationality: cell with list all players of same nationality, club for each player
 
 def club_natl_group(t20_c_p_iso):
-    t20_c_p_iso['Club Players'] = t20_c_p_iso.groupby(['Club', 'Nationality'])['FullName'].transform(lambda x: ', <br>'.join(x))
+    t20_c_p_iso['Club Players'] = t20_c_p_iso.groupby(['Club', 'Nationality'])['FullName'].transform(lambda x: '<br>'.join(x))
 
     unique_club_natl = t20_c_p_iso[['Nationality', 'Club', 'Club Players', 'natl_iso']].drop_duplicates().reset_index()
     df_club_info_joined = t20_c_p_iso.merge(unique_club_natl, how = 'left', left_on = ['Nationality', 'Club'], right_on = ['Nationality', 'Club'])
