@@ -49,7 +49,7 @@ def update_options(search_value):
         locationmode = 'ISO-3',
         scope = 'world',
         hover_name = 'Club',
-        hover_data= ['Nationality', 'Club Players_x'],
+        hover_data= ['Club Players_x'],
         title = 'Where are {}\'s Players From?'.format(search_value),
         width= 1500,
         height= 800)

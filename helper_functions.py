@@ -78,6 +78,8 @@ def club_natl_group(t20_c_p_iso):
 
 grouped_player_clubs = club_natl_group(t20_club_players_iso)
 
+#print(grouped_player_clubs)
+
 
 
 
