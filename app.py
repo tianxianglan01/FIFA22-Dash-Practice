@@ -50,9 +50,15 @@ def update_options(search_value):
         scope = 'world',
         hover_name = 'Club',
         hover_data= ['FullName'],
-        title = 'Where are {}\'s Players From?'.format(search_value))
+        title = 'Where are {}\'s Players From?'.format(search_value),
+        width= 1500,
+        height= 700)
         #projection = 'mercator')
     
+
+    # fig.update are additional options for customizing the fig
+    # fig by itself is pretty barebones
+
     # shows country borders
     fig.update_geos(showcountries = True,
                     resolution = 50,

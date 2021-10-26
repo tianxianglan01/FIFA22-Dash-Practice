@@ -66,6 +66,8 @@ t20_clubs = fill_club_options(t20_paid_clubs())
 #print(t20_clubs)
 #print(t20_club_players_iso)
 
+def 
+
 
 
 
