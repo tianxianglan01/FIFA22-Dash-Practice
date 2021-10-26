@@ -5,7 +5,7 @@ import plotly.express as px
 import pandas as pd
 from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
-from helper_functions import t20_club_players_iso, t20_clubs
+from helper_functions import t20_club_players_iso, t20_clubs, grouped_player_clubs
 from data_cleaning import t20_paid_clubs
 
 
@@ -38,21 +38,21 @@ def update_options(search_value):
     #the container used here is just to print the below statement
     container = 'Hover over countries to see players!'
 
-    dff = t20_club_players_iso.copy()
+    dff = grouped_player_clubs.copy()
     dff = dff[dff['Club'] == search_value]
 
 
     # choropleth build
     fig = px.choropleth(
         data_frame = dff,
-        locations = 'natl_iso',
+        locations = 'natl_iso_x',
         locationmode = 'ISO-3',
         scope = 'world',
         hover_name = 'Club',
-        hover_data= ['FullName'],
+        hover_data= ['Nationality', 'Club Players_x'],
         title = 'Where are {}\'s Players From?'.format(search_value),
         width= 1500,
-        height= 700)
+        height= 800)
         #projection = 'mercator')
     
 

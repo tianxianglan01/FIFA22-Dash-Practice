@@ -41,7 +41,7 @@ def map_natl_iso(df_select):
     df['natl_iso'] = df['Nationality'].map(countries_map)
     # print(df)
     return df
-print(map_natl_iso(df_interest))
+#print(map_natl_iso(df_interest))
 
 # narrow it down, let's get top 20 clubs by average wage in EUR
 
@@ -66,7 +66,19 @@ t20_clubs = fill_club_options(t20_paid_clubs())
 #print(t20_clubs)
 #print(t20_club_players_iso)
 
-def 
+# create column grouped by club and nationality: cell with list all players of same nationality, club for each player
+
+def club_natl_group(t20_c_p_iso):
+    t20_c_p_iso['Club Players'] = t20_c_p_iso.groupby(['Club', 'Nationality'])['FullName'].transform(lambda x: ', <br>'.join(x))
+
+    unique_club_natl = t20_c_p_iso[['Nationality', 'Club', 'Club Players', 'natl_iso']].drop_duplicates().reset_index()
+    df_club_info_joined = t20_c_p_iso.merge(unique_club_natl, how = 'left', left_on = ['Nationality', 'Club'], right_on = ['Nationality', 'Club'])
+    #print(df_club_info_joined.columns)
+    return df_club_info_joined[['FullName', 'Nationality', 'Club', 'Club Players_x', 'natl_iso_x']]
+
+grouped_player_clubs = club_natl_group(t20_club_players_iso)
+
+
 
 
 
